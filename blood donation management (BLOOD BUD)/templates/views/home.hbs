@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood-Bud</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/side_nav.css">
+    <link rel="stylesheet" href="/css/footer.css">
+
+    {{!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    {{!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/fontawesome.min.css" integrity="sha512-r9kUVFtJ0e+8WIL8sjTUlHGbTLwlOClXhVqGgu4sb7ILdkBvM2uI+n/Fz3FN8u3VqJX7l9HLiXqXxkx2mZpkvQ==" crossorigin="anonymous" referrerpolicy="no-referrer" /> --}}
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"> --}}
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+     {{>header}}
+    <div class="clearfix">
+
+    <div class="search_container box">
+        
+            <label for="searchBy" id="search_label">Search by</label>
+            <select name="searchBy" id="searchBy">
+                <option value="__state">State</option>
+                <option value="__district">District</option>
+                <option value="__city">City</option>
+                <option value="_pincode">Pincode</option>
+                <option value="_blood_bank_name">Blood Bank Name</option> 
+            </select>
+            <input type="text" name="searchKey" id="searchKey">
+            <button type="submit" id="search-btn" >Search</button>
+        
+        <div class="tableContent">
+        <img src="/img/" alt="">
+        <table id="blood_bank_table" width="100%">
+            <thead>
+                <td>Blood Bank Name</td>
+                <td>Pincode</td>
+                <td>Address</td>
+                <td>Contact no.</td>
+                <td>Email</td>
+            </thead>
+            <tbody id="table_body">
+
+            </tbody>
+        </table>
+        </div>
+    </div>
+    <div class="slideshow box" id="img_slider">
+        <div class="slide-wrapper">
+            <div class="image-container"></div>
+            <div class="image-container"></div>
+            <div class="image-container"></div>
+            <div class="image-container"></div>
+            <div class="image-container"></div>
+        </div>
+    </div>
+    </div>
+    <br><br><br>
+    <div class="donate_info clearfix">
+        <h1 style="text-align: center;">THINGS TO KNOW BEFORE  DONATION</h1>
+        <div class="quotes_img box"><img src="/img/donate_blood.jpg" width="100%" alt="Donate Blood"></div>
+        <div class="donation_table box">
+            <table id="donor_table" width="100%">
+                <th colspan="3">Who can donate whom?</th>
+                <tr>
+                    <td>Blood Type</td>
+                    <td>Donate Blood To</td>
+                    <td>Receive Blood From</td>
+                </tr>
+                <tr>
+                    <td>A+</td>
+                    <td>A+ AB+</td>
+                    <td>A+ A- O+ O-</td>
+                </tr>
+                <tr>
+                    <td>O+</td>
+                    <td>O+ A+ B+ AB+</td>
+                    <td>O+ O-</td>
+                </tr>
+                <tr>
+                    <td>B+</td>
+                    <td>B+ AB+</td>
+                    <td>B+ B- O+ O-</td>
+                </tr>
+                <tr>
+                    <td>AB+</td>
+                    <td>AB+</td>
+                    <td>Everyone</td>
+                </tr>
+                <tr>
+                    <td>A-</td>
+                    <td>A+ A- AB+ AB-</td>
+                    <td>A- O-</td>
+                </tr>
+                <tr>
+                    <td>O-</td>
+                    <td>Everyone</td>
+                    <td>O-</td>
+                </tr>
+                <tr>
+                    <td>B-</td>
+                    <td>B+ B- AB+ AB-</td>
+                    <td>B- O-</td>
+                </tr>
+                <tr>
+                    <td>AB-</td>
+                    <td>AB+ AB-</td>
+                    <td>AB+ A- B- O-</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    {{>footer}}
+    <script>
+        function toggleNav() {
+          
+          document.body.classList.toggle("nav-open");
+         
+
+        }
+    </script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="/js/home.js"></script>
+    <script src="/js/search.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#blood_bank_table').hide();
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood-Bud</title>
+    <link rel="stylesheet" href="/CSS/style.css">
+    <link rel="stylesheet" href="/CSS/side_nav.css">
+    <link rel="stylesheet" href="/CSS/donate.css">
+    <link rel="stylesheet" href="/CSS/footer.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</head>
+<body>
+     {{>header}}
+     <div class="box">
+
+    <form action="/Blood-Bud/donate" method="post"> 
+            <b> Full Name: </b>
+            <input type="text" name="name" placeholder="Enter Name" class="f1" required>
+            <br><br>
+            <b> Gender: </b>
+            <select name="gender">
+                <option value="Male"> Male </option>
+                <option value="Female"> Female </option>
+                <option value="Other"> Other </option>
+            </select>
+            <br><br>
+            <b> Age : </b>
+            <input type="number" name="age" class="f1" min="18" max="60" required>
+            <br><br>
+            <br>
+            <b> Mobile NO: </b>
+            <input type="tel" name="mobile_no" class="f1" maxlength="10" >
+            <br><br>
+            <b> Alternate Mobile No: </b>
+            <input type="tel" name="alt_mobile" maxlength="10" class="f1">
+            <br><br>
+            <b> Email: </b> 
+            <input type="email" name="email" class="f1">
+            <br><br>
+            <b> Blood Group: </b>
+            <select name="bg" size="1" a>  
+                <option value="A+"> A+ </option>  
+                <option value="A-"> A- </option>  
+                <option value="B+"> B+ </option>  
+                <option value="B-"> B- </option>  
+                <option value="O+"> O+ </option>  
+                <option value="O-"> O- </option>
+                <option value="AB+"> AB+ </option>  
+                <option value="AB-"> AB- </option>  
+            </select>
+            <br><br>
+            <b>Please provide your Location:</b><br>
+            <select name="searchBy" id="searchBy">
+                <option value="__state">State</option>
+                <option value="__district">District</option>
+                <option value="__city">City</option>
+                <option value="_pincode">Pincode</option> 
+        </select>
+        <input type="text" id="location" name="Name" size="20" onblur="myFunc()">
+        <br><br>
+        <b>Choose Blood Bank:</b>
+        <select name="blood_bank" style="width: 100%;" id="blood_banks">
+           <option value="" disabled selected>Choose Blood Bank</option>
+        </select>
+        <input type="reset" value="Reset" class="reset">
+        <input type="submit" value="Donate" class="donate">
+        </form>
+   
+     </div>
+    <script>
+        function toggleNav() {
+          
+          document.body.classList.toggle("nav-open");
+         
+
+        }
+    </script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="/js/home.js"></script>
+    <script src="/js/search.js"></script>
+    <script src="/js/request.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#blood_bank_table').hide();
+        })
+    </script>
+    
+</body>
+</html>
